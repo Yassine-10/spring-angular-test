@@ -1,0 +1,22 @@
+ .bottom-right {
+   position: absolute;
+   bottom: 100px;
+   right: 100px;
+ }
+ p {
+   font-family: "Lato", sans-serif;
+   text-align: justify;
+ }
+ .article-card-card {
+   max-width: 450px;
+   max-height: 450px;
+   margin: 10px;
+ }
+
+
+ mat-card-title {
+   color: black;
+   font-size:25px;
+   justify-content: center;
+   display: flex;
+ }

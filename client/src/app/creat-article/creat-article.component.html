@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="form-style-10">
+      <h3>Create Article</h3>
+
+      <div [hidden]="submitted" style="width: 400px;">
+        <form (ngSubmit)="onSubmit()">
+          <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput id="name" required [(ngModel)]="article.name" name="name">
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Price</mat-label>
+            <input matInput  required id="price" required [(ngModel)]="article.price" name="price">
+          </mat-form-field>
+
+
+          <input type="file" (change)="onSelectFile($event)">
+
+
+
+          <button type="submit" class="btn btn-success"style="margin-top: 20px;">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div></div>

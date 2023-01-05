@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="form-style-10">
+      <h3>Create Order</h3>
+
+      <div [hidden]="submitted" style="width: 400px;">
+        <form (ngSubmit)="onSubmit()">
+
+          <mat-form-field appearance="fill">
+            <mat-label>Reference</mat-label>
+            <input matInput required id="ref" [(ngModel)]="order.reference"  [ngModelOptions]="{standalone: true}"name="ref">
+          </mat-form-field>
+
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Choose a date</mat-label>
+            <input matInput (dateChange)="onDateChange($event)" [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker">
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          <div class="form-group">
+            <mat-form-field appearance="fill">
+              <mat-label>Articles</mat-label>
+
+              <mat-select  [(ngModel)]="articleSelected"  [ngModelOptions]="{standalone: true}" multiple>
+                <mat-option *ngFor="let a of articles" [value]="a.id">{{a.name}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+
+          </div>
+
+
+          <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div></div>

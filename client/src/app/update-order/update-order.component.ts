@@ -11,8 +11,8 @@ import {ArticleService} from "../services/article.service";
   styleUrls: ['./update-order.component.css']
 })
 export class UpdateOrderComponent implements OnInit{
-  // @ts-ignore
-  id: number ;
+
+  id?: number ;
   data:any;
 
   public articles: Article[]=[] ;
@@ -20,8 +20,8 @@ export class UpdateOrderComponent implements OnInit{
   public article=new Article() ;
 
 
-  // @ts-ignore
-  public order: Order;
+
+  public order: Order=new Order();
 
   public orderUpdate:Order=new Order();
 
@@ -37,7 +37,7 @@ export class UpdateOrderComponent implements OnInit{
 
   }
   getOrder(){
-    this.order=new Order();
+
     this.id = this.route.snapshot.params['id'];
 
     this.orderService.getOrdersById(this.id)
@@ -73,11 +73,10 @@ export class UpdateOrderComponent implements OnInit{
       this.orderUpdate.articles.push(this.article);
       this.article=new Article() ;
     })
-    //this.orderUpdate.date=this.order.
     this.orderService.updateOrders(this.id,this.orderUpdate)
       .subscribe(data => {
         console.log(data);
-        // @ts-ignore
+
 
         this.gotoList();
       }, error => console.log(error));

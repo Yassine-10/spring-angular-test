@@ -12,8 +12,8 @@ export class OrderComponent implements  OnInit{
   public orders: Order[]=[] ;
   data:any;
 
-  // @ts-ignore
-  id: number  ;
+
+  id?: number  ;
 
 
   constructor(public orderService:OrderService,public router:Router,private route: ActivatedRoute,) { }

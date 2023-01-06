@@ -28,19 +28,12 @@ export class CreatArticleComponent implements OnInit{
   }
 
 onSelectFile(e:any){
-  if(e.target.files){
-    var reader=new FileReader();
-    reader.readAsDataURL(e.target.files[0]);
-    reader.onload=(event:any)=>{
-     // this.url=event.target.url;
-      this.article.picture=e.target.files[0].name;
-    }
-  }
+  this.article.picture=e.target.files[0].name;
 
 }
 
   save() {
-    // @ts-ignore
+
     this.articlelService
       .createArticle(this.article).subscribe(data => {
         console.log(data)

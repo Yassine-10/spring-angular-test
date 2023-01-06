@@ -13,7 +13,7 @@ export class OrderService {
   public getOrders() {
     return this.http.get(this.host+"/orders")
   }
-  public getOrdersById(id:number) {
+  public getOrdersById(id: number | undefined) {
     return this.http.get(this.host+"/orders/"+id)
   }
 
@@ -22,7 +22,7 @@ export class OrderService {
     return this.http.post(`${this.host+"/orders"}`, orders);
   }
 
-  updateOrders(id: number,value: any): Observable<Object> {
+  updateOrders(id: number | undefined, value: any): Observable<Object> {
     return this.http.put(`${this.host+"/orders"}/${id}`, value);
   }
 }
